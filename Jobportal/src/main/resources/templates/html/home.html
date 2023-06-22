@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--  <link rel="stylesheet" type="text/css" href="css/style.css">-->
+  <title>JobDeets</title>
+</head>
+<body>
+<div class="content">
+<header>
+  <h1>JobDeets</h1>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/jobs">Jobs</a></li>
+      <li><a href="/internships">Internships</a></li>
+      <li><a href="/AboutUs">About Us</a></li>
+      <li><a href="/ContactUs">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <h1>Welcome to Job Portal</h1>
+  <p>We provide job opportunities for all.</p>
+  <a href="/jobs" class="btn">View Jobs</a>
+</main>
+</div>
+<footer>
+  <p>Copyright &copy; 2022 Job Portal</p>
+</footer>
+</body>
+<style>
+
+html,
+body {
+height: 100%;
+
+}
+body {
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+min-height: 100%; /* Set the minimum height of the body to 100% */
+display: flex; /* Use flexbox layout for the body */
+flex-direction: column; /* Stack the child elements vertically */
+}
+.content {
+  flex: 1;
+  background-image: url('Images/office.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+/* Header styles */
+header {
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 75vh;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #0062cc;
+}
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 10px;
+  position: fixed; /* Set the position to fixed */
+  bottom: 0; /* Position the footer at the bottom of the viewport */
+  width: 100%; /* Set the width to 100% */
+}
+  </style>
+</html>

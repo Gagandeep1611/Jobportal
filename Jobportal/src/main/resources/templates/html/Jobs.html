@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Jobs</title>
+    <link rel="stylesheet" type="text/css" href="../css/pagination.css">
+</head>
+<body>
+<div class="content">
+    <header>
+        <h1>JobDeets</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/jobs">Jobs</a></li>
+                <li><a href="/internships">Internships</a></li>
+                <li><a href="/AboutUs">About Us</a></li>
+                <li><a href="/ContactUs">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="job-search">
+        <h1>Job Portal</h1>
+        <form th:action="@{/jobs/search}" method="get">
+            <input type="text" name="keyword" th:value="${keyword}" placeholder="Search for jobs...">
+            <button type="submit" value="Search">Search</button>
+        </form>
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Company</th>
+            <th>Location</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="job : ${jobPage.content}">
+            <td th:text="${job.id}"></td>
+            <td th:text="${job.title}"></td>
+            <td th:text="${job.company}"></td>
+            <td th:text="${job.location}"></td>
+            <td th:text="${job.description}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="pagination" th:if="${jobPage.totalPages > 1}">
+        <ul>
+                <li th:class="${jobPage.first} ? 'disabled' : ''">
+                <a th:href="@{/jobs/search(page=0, keyword=${keyword})}" aria-label="First">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li th:if="${!jobPage.first}" th:class="${jobPage.first} ? 'disabled' : ''">
+                <a th:href="@{/jobs/search(page=${jobPage.number - 1}, keyword=${keyword})}"
+                   aria-label="Previous">
+                    <span aria-hidden="true">&lsaquo;</span>
+                </a>
+            </li>
+            <li th:each="pageNumber : ${#numbers.sequence(0, jobPage.totalPages - 1)}"
+                th:class="${pageNumber == jobPage.number} ? 'active' : ''">
+                <a th:href="@{/jobs/search(page=${pageNumber},  keyword=${keyword})}"
+                   th:text="${pageNumber + 1}"></a>
+            </li>
+            <li th:if="${!jobPage.last}" th:class="${jobPage.last} ? 'disabled' : ''">
+                <a th:href="@{/jobs/search(page=${jobPage.number + 1}, keyword=${keyword})}"
+                   aria-label="Next">
+                    <span aria-hidden="true">&rsaquo;</span>
+                </a>
+            </li>
+            <li th:class="${jobPage.last} ? 'disabled' : ''">
+                <a th:href="@{/jobs/search(page=${jobPage.totalPages - 1}, keyword=${keyword})}"
+                   aria-label="Last">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div th:unless="${jobPage.totalPages > 0}" style="text-align: center;">
+        <p style="font-weight: bold;">No Results</p>
+    </div>
+
+
+</div>
+<footer>
+    <p>Copyright &copy; 2022 Job Portal</p>
+</footer>
+</body>
+<style>
+.job-search {
+  padding: 20px;
+  text-align: center;
+  }
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  }
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+      .job-card {
+        width: 300px;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        text-align: left;
+      }
+
+      .job-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .job-company {
+        font-size: 14px;
+        color: #666;
+      }
+         body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+   display: flex;
+    flex-direction: column;
+
+}
+html,
+body {
+height: 100%;
+
+}
+
+.content {
+  flex: 1;
+  background-image: url('Images/office.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+/* Header styles */
+header {
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 75vh;
+}
+
+.btn {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 10px;
+  position: fixed; /* Set the position to fixed */
+  bottom: 0; /* Position the footer at the bottom of the viewport */
+  width: 100%; /* Set the width to 100% */
+}
+
+
+</style>
+</html>

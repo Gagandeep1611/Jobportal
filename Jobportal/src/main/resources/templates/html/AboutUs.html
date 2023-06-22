@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us</title>
+<!--  <link rel="stylesheet" type="text/css" href="style.css">-->
+</head>
+<body>
+<header>
+  <h1>JobDeets</h1>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/jobs">Jobs</a></li>
+      <li><a href="/internships">Internships</a></li>
+      <li><a href="/AboutUs">About Us</a></li>
+      <li><a href="/ContactUs">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="content">
+<main>
+  <h1 class="about-us-header">About Us</h1>
+  <p class="about-us-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel
+    placerat nibh. Fusce tristique diam euismod ipsum bibendum congue.
+    Aliquam placerat dui ut libero facilisis, vel semper nunc egestas.
+    Nullam vel velit id est iaculis fringilla.
+  </p>
+  <p class="about-us-text">
+    Nam dapibus, mi ut convallis suscipit, magna risus commodo est,
+    eu commodo metus mauris et est. Sed vestibulum, ligula id tincidunt
+    congue, nisl libero laoreet libero, vel faucibus est velit id mi.
+    Suspendisse aliquam auctor mauris, eget rutrum ipsum.
+  </p>
+</main>
+</div>
+<footer>
+  <p>Copyright &copy; 2022 Job Portal</p>
+</footer>
+</body>
+<style>
+   body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+   display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+
+}
+html,
+body {
+height: 100%;
+
+}
+
+.content {
+  flex: 1;
+  background-image: url('Images/office.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+   text-align: center;
+      font-family: Arial, sans-serif;
+
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+/* Header styles */
+header {
+  background-color: #007bff;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 75vh;
+}
+
+.btn {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+
+.about-us-header {
+      font-size: 36px;
+      font-weight: bold;
+      margin-top: 50px;
+    }
+
+   .about-us-text{
+    max-width: 800px;
+  overflow: hidden;
+  padding: 20px;
+  margin: 0 auto;
+   }
+
+   footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 10px;
+  position: fixed; /* Set the position to fixed */
+  bottom: 0; /* Position the footer at the bottom of the viewport */
+  width: 100%; /* Set the width to 100% */
+}
+</style>
+</html>
